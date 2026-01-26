@@ -3,19 +3,17 @@
 set -eu
 
 ARCH=$(uname -m)
-VERSION=$(pacman -Q sdlpop | awk '{print $2; exit}') # example command to get version of application here
+VERSION=$(pacman -Q snes9x-gtk-git | awk '{print $2; exit}') # example command to get version of application here
 export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=/opt/sdlpop/data/icon.png
-export DESKTOP=/usr/share/applications/sdlpop.desktop
+export ICON=/usr/share/icons/hicolor/256x256/apps/snes9x.png
+export DESKTOP=/usr/share/applications/snes9x-gtk.desktop
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-cp -r /opt/sdlpop ./AppDir/share
-quick-sharun /usr/share/sdlpop/prince
-echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/shared/sdlpop' >> ./AppDir/.env
+quick-sharun /usr/bin/snes9x-gtk
 
 # Additional changes can be done in between here
 
