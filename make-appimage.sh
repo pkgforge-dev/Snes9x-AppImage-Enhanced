@@ -13,8 +13,9 @@ export DESKTOP=/usr/share/applications/sdlpop.desktop
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/prince
-echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/share/opt/sdlpop' >> ./AppDir/.env
+mv -r /opt/sdlpop ./AppDir/shared/
+quick-sharun /usr/shared/sdlpop/prince
+echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/shared/sdlpop' >> ./AppDir/.env
 
 # Additional changes can be done in between here
 
