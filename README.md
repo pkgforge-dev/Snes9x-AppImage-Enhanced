@@ -11,9 +11,9 @@
 </p>
 
 
-| Latest Nightly Release | Upstream URL |
-| :---: | :---: |
-| [Click here](https://github.com/pkgforge-dev/Snes9x-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/snes9xgit/snes9x) |
+| Latest Stable Release | Latest Nightly Relase | Upstream URL |
+| :---: | :---: | :---: |
+| [Click here](https://github.com/pkgforge-dev/Snes9x-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/pkgforge-dev/Snes9x-AppImage-Enhanced/releases/tag/nightly) | [Click here](https://github.com/snes9xgit/snes9x) |
 
 </div>
 
