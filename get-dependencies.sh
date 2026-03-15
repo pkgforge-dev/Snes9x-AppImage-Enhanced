@@ -10,11 +10,9 @@ pacman -Syu --noconfirm \
     cairo               \
     cmake               \
     gdk-pixbuf2         \
-    gtk3                \
     gtkmm3              \
     hicolor-icon-theme  \
     intltool            \
-    libdecor            \
     libepoxy            \
     libxv               \
     meson               \
@@ -27,12 +25,8 @@ pacman -Syu --noconfirm \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
-# Comment this out if you need an AUR package
-#make-aur-package
-
-# If the application needs to be manually built that has to be done down here
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "Making nightly build of Snes9x-GTK..."
     echo "---------------------------------------------------------------"
@@ -56,6 +50,6 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     make -j$(nproc)
     make install
 else
-    pacman -S --noconfirm snes9x-gtk snes9x
+    pacman -S --noconfirm snes9x-gtk
     pacman -Q snes9x-gtk | awk '{print $2; exit}' > ~/version
 fi
