@@ -44,6 +44,7 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     cd ../gtk
     mkdir -p build && cd build
     cmake .. \
+        -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_C_FLAGS="-Wno-error=format-security" \
         -DCMAKE_CXX_FLAGS="-Wno-error=format-security"
