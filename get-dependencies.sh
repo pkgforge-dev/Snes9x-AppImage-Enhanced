@@ -21,7 +21,7 @@ pacman -Syu --noconfirm \
     pipewire-audio      \
     pipewire-jack       \
     portaudio           \
-    sdl2
+    sdl2-compat
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -42,14 +42,13 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
         --with-system-zip
     make -j$(nproc)
     cd ../gtk
-    mkdir -p build && cd build
-    cmake .. \
+    cmake -S ./ -B build \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_C_FLAGS="-Wno-error=format-security" \
         -DCMAKE_CXX_FLAGS="-Wno-error=format-security"
-    make -j$(nproc)
-    make install
+    cmake --build build -j$(nproc)
+    cmake --install build
 else
     pacman -S --noconfirm snes9x-gtk
     pacman -Q snes9x-gtk | awk '{print $2; exit}' > ~/version
