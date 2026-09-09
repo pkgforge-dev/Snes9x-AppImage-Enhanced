@@ -21,7 +21,7 @@ pacman -Syu --noconfirm \
     pipewire-audio      \
     pipewire-jack       \
     portaudio           \
-    sdl2
+    sdl2-compat
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
