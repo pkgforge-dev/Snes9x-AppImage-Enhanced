@@ -16,7 +16,7 @@ pacman -Syu --noconfirm \
     libepoxy            \
     libxv               \
     meson               \
-    minizip             \
+    minizip-ng          \
     nasm                \
     pipewire-audio      \
     pipewire-jack       \
