@@ -36,7 +36,7 @@ jobs:
   build-additional-cpu-arches:
     if: false # set to true to build the below arches
     name: "${{ matrix.name }} (${{ matrix.arch }})"
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix:
